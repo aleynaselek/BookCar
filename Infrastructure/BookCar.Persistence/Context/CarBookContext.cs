@@ -13,7 +13,7 @@ namespace BookCar.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = DESKTOP-OTC2IOU; initial Catalog = CarBookDb; integrated Security=true;") ;
+            optionsBuilder.UseSqlServer("Server = DESKTOP-OTC2IOU\\SQLEXPRESS; initial Catalog = CarBookDb; integrated Security=true; TrustServerCertificate=true") ;
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
