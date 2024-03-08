@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCar.Domain", "Core\Book
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1FBC7906-1C00-4D99-8969-0E6FCF9ACC05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCar.Persistence", "Infrastructure\BookCar.Persistence\BookCar.Persistence.csproj", "{226693A4-793F-412B-81E4-01EC05EF578D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCar.Persistence", "Infrastructure\BookCar.Persistence\BookCar.Persistence.csproj", "{226693A4-793F-412B-81E4-01EC05EF578D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{07B2D2A9-0370-45DB-813B-FAC17D497795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCar.WebApi", "Presentation\BookCar.WebApi\BookCar.WebApi.csproj", "{D3B82786-2B8C-4665-92ED-BCD15AE82CF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCar.WebApi", "Presentation\BookCar.WebApi\BookCar.WebApi.csproj", "{D3B82786-2B8C-4665-92ED-BCD15AE82CF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCar.Application", "Core\BookCar.Application\BookCar.Application.csproj", "{A47FFACD-0438-4BFE-AE38-C1D950A8545D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D3B82786-2B8C-4665-92ED-BCD15AE82CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3B82786-2B8C-4665-92ED-BCD15AE82CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3B82786-2B8C-4665-92ED-BCD15AE82CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47FFACD-0438-4BFE-AE38-C1D950A8545D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47FFACD-0438-4BFE-AE38-C1D950A8545D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47FFACD-0438-4BFE-AE38-C1D950A8545D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47FFACD-0438-4BFE-AE38-C1D950A8545D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{1182BE7A-89DF-48CA-A2F5-A2F0A3365415} = {80937163-2C1E-4967-A102-E60545E91449}
 		{226693A4-793F-412B-81E4-01EC05EF578D} = {1FBC7906-1C00-4D99-8969-0E6FCF9ACC05}
 		{D3B82786-2B8C-4665-92ED-BCD15AE82CF1} = {07B2D2A9-0370-45DB-813B-FAC17D497795}
+		{A47FFACD-0438-4BFE-AE38-C1D950A8545D} = {80937163-2C1E-4967-A102-E60545E91449}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4463471-D8F1-4C29-AF84-307907C18C84}
