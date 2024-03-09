@@ -1,11 +1,6 @@
 ﻿using BookCar.Application.Features.CQRS.Commands.AboutCommands;
-using BookCar.Application.Features.CQRS.Handlers.AboutHandlers;
-using BookCar.Domain.Entities;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.Runtime.ConstrainedExecution;
+using BookCar.Application.Features.CQRS.Handlers.AboutHandlers;    
+using Microsoft.AspNetCore.Mvc; 
 using BookCar.Application.Features.CQRS.Queries.AboutQueries;
 
 namespace BookCar.WebApi.Controllers
@@ -29,7 +24,6 @@ namespace BookCar.WebApi.Controllers
             _removeAboutCommandHandler = removeAboutCommandHandler;
         }
 
-
         [HttpGet]
         public async Task<IActionResult> AboutList()
         {
@@ -45,9 +39,9 @@ namespace BookCar.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetAbout(CreateAboutCommand command)
+        public async Task<IActionResult> CreateAbout(CreateAboutCommand command)
         {
-            var value = _createAboutCommandHandler.Handle(command);
+            await _createAboutCommandHandler.Handle(command);
             return Ok("Hakkında Bilgisi Eklendi");
         }
 
