@@ -1,5 +1,6 @@
 ﻿using BookCar.Application.Features.CQRS.Results.CarResults;
 using BookCar.Application.Interfaces;
+using BookCar.Application.Interfaces.CarInterfaces;
 using BookCar.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,16 @@ namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
 {
     public class GetCarWithBrandQueryHandler
     {
-        private readonly IRepository<Car> _repository;
-        public GetCarWithBrandQueryHandler(IRepository<Car> repository)
+        private readonly ICarRepository _repository;
+
+        public GetCarWithBrandQueryHandler(ICarRepository repository)
         {
             _repository = repository;
         }
-        public async Task<List<GetCarWithBrandQueryResult>> Handle()
+
+        public List<GetCarWithBrandQueryResult> Handle()
         {
-            var values = await _repository.GetAllAsync();
+            var values =  _repository.GetCarsWithBrand();
             return values.Select(x => new GetCarWithBrandQueryResult
             {
                 CarID = x.CarID,
