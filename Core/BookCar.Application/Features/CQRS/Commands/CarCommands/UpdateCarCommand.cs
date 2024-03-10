@@ -21,4 +21,4 @@ namespace BookCar.Application.Features.CQRS.Commands.CarCommands
         public string BigImageUrl { get; set; }
     }
 }
-}
+
