@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Application.Features.CQRS.Commands.AboutCommands
+namespace BookCar.Application.Features.CQRS.Commands.BannerCommands
 {
     public class RemoveBannerCommand
     {

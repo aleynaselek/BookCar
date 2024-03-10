@@ -1,4 +1,4 @@
-﻿using BookCar.Application.Features.CQRS.Commands.AboutCommands;
+﻿using BookCar.Application.Features.CQRS.Commands.BannerCommands;
 using BookCar.Application.Interfaces;
 using BookCar.Domain.Entities;
 using System;
@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
+namespace BookCar.Application.Features.CQRS.Handlers.BannerHandlers
 {
     public class RemoveBannerCommandHandler
     {
-        private readonly IRepository<About> _repository;
+        private readonly IRepository<Banner> _repository;
 
-        public RemoveBannerCommandHandler(IRepository<About> repository)
+        public RemoveBannerCommandHandler(IRepository<Banner> repository)
         {
             _repository = repository;
         }

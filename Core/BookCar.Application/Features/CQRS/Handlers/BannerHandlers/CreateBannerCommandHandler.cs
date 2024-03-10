@@ -1,4 +1,4 @@
-﻿using BookCar.Application.Features.CQRS.Commands.AboutCommands;
+﻿using BookCar.Application.Features.CQRS.Commands.BannerCommands;
 using BookCar.Application.Interfaces;
 using BookCar.Domain.Entities;
 using System;
@@ -7,23 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
+namespace BookCar.Application.Features.CQRS.Handlers.BannerHandlers
 {
     public class CreateBannerCommandHandler
     {
-        private readonly IRepository<About> _repository;
+        private readonly IRepository<Banner> _repository;
 
-        public CreateBannerCommandHandler(IRepository<About> repository)
+        public CreateBannerCommandHandler(IRepository<Banner> repository)
         {
             _repository = repository;
         }
         public async Task Handle(CreateBannerCommand command)
         {
-            await _repository.CreateAsync(new About
+            await _repository.CreateAsync(new Banner
             {
                 Title = command.Title,
                 Description = command.Description,
-                ImageUrl = command.ImageUrl
+                VideoDescription = command.VideoDescription,
+                VideoUrl = command.VideoUrl
             });
         }
     }

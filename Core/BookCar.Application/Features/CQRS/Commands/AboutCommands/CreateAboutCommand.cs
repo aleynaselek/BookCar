@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Commands.AboutCommands
 {
-    public class CreateAboutCommand
+    public class CreateBannerCommand
     {
         public string Title { get; set; }
         public string Description { get; set; }

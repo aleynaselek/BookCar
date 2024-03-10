@@ -1,5 +1,5 @@
-﻿using BookCar.Application.Features.CQRS.Queries.AboutQueries;
-using BookCar.Application.Features.CQRS.Results.AboutResults;
+﻿using BookCar.Application.Features.CQRS.Queries.BannerQueries;
+using BookCar.Application.Features.CQRS.Results.BannerResults;
 using BookCar.Application.Interfaces;
 using BookCar.Domain.Entities;
 using System;
@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
+namespace BookCar.Application.Features.CQRS.Handlers.BannerHandlers
 {
     public class GetBannerByIdQueryHandler
     {
-        private readonly IRepository<About> _repository;
-        public GetBannerByIdQueryHandler(IRepository<About> repository)
+        private readonly IRepository<Banner> _repository;
+        public GetBannerByIdQueryHandler(IRepository<Banner> repository)
         {
             _repository = repository;
         }
@@ -22,10 +22,11 @@ namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
             var values =await _repository.GetByIdAsync(query.Id);
             return new GetBannerByIdQueryResult
             {
-                AboutID = values.AboutID,
-                Description = values.Description,
+                BannerId = values.BannerId,
                 Title = values.Title,
-                ImageUrl = values.ImageUrl
+                Description = values.Description,
+                VideoDescription = values.VideoDescription,
+                VideoUrl = values.VideoUrl
             };
         }
     }
