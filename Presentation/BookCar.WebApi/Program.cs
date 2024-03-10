@@ -2,6 +2,7 @@ using BookCar.Application.Features.CQRS.Handlers.AboutHandlers;
 using BookCar.Application.Features.CQRS.Handlers.BannerHandlers;
 using BookCar.Application.Features.CQRS.Handlers.BrandHandlers;
 using BookCar.Application.Features.CQRS.Handlers.CarHandlers;
+using BookCar.Application.Features.CQRS.Handlers.CategoryHandlers;
 using BookCar.Application.Interfaces;
 using BookCar.Application.Interfaces.CarInterfaces;
 using BookCar.Persistence.Context;
@@ -38,6 +39,12 @@ builder.Services.AddScoped<CreateCarCommandHandler>();
 builder.Services.AddScoped<UpdateCarCommandHandler>();
 builder.Services.AddScoped<RemoveCarCommandHandler>();
 builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
+
+builder.Services.AddScoped<GetCategoryQueryHandler>();
+builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+builder.Services.AddScoped<CreateCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<RemoveCategoryCommandHandler>(); 
 
 
 builder.Services.AddControllers();
