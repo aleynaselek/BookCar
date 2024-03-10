@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
 {
-    public class CreateBannerCommandHandler
+    public class CreateAboutCommandHandler
     {
         private readonly IRepository<About> _repository;
 
-        public CreateBannerCommandHandler(IRepository<About> repository)
+        public CreateAboutCommandHandler(IRepository<About> repository)
         {
             _repository = repository;
         }
-        public async Task Handle(CreateBannerCommand command)
+        public async Task Handle(CreateAboutCommand command)
         {
             await _repository.CreateAsync(new About
             {

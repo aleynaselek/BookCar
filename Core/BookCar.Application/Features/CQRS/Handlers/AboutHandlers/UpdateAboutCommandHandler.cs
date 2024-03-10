@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
 {
-    public class UpdateBannerCommandHandler
+    public class UpdateAboutCommandHandler
     {
         private readonly IRepository<About> _repository;
 
-        public UpdateBannerCommandHandler(IRepository<About> repository)
+        public UpdateAboutCommandHandler(IRepository<About> repository)
         {
             _repository = repository;
         }
-        public async Task Handle(UpdateBannerCommand command)
+        public async Task Handle(UpdateAboutCommand command)
         {
             var values = await _repository.GetByIdAsync(command.AboutId);
             values.Description = command.Description;

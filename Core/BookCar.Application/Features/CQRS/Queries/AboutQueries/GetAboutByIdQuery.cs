@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Queries.AboutQueries
 {
-    public class GetBannerByIdQuery
+    public class GetAboutByIdQuery
     {
-        public GetBannerByIdQuery(int id)
+        public GetAboutByIdQuery(int id)
         {
             Id = id;
         }  

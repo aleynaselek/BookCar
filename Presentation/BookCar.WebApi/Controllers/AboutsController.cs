@@ -9,13 +9,13 @@ namespace BookCar.WebApi.Controllers
     [ApiController]
     public class AboutsController : ControllerBase
     {
-        private readonly CreateBannerCommandHandler _createAboutCommandHandler;
-        private readonly GetBannerByIdQueryHandler _getAboutByIdQueryHandler;
-        private readonly GetBannerQueryHandler _getAboutQueryHandler;
-        private readonly UpdateBannerCommandHandler _updateAboutCommandHandler;
-        private readonly RemoveBannerCommandHandler _removeAboutCommandHandler;
+        private readonly CreateAboutCommandHandler _createAboutCommandHandler;
+        private readonly GetAboutByIdQueryHandler _getAboutByIdQueryHandler;
+        private readonly GetAboutQueryHandler _getAboutQueryHandler;
+        private readonly UpdateAboutCommandHandler _updateAboutCommandHandler;
+        private readonly RemoveAboutCommandHandler _removeAboutCommandHandler;
 
-        public AboutsController(CreateBannerCommandHandler createAboutCommandHandler, GetBannerByIdQueryHandler getAboutByIdQueryHandler, GetBannerQueryHandler getAboutQueryHandler, UpdateBannerCommandHandler updateAboutCommandHandler, RemoveBannerCommandHandler removeAboutCommandHandler)
+        public AboutsController(CreateAboutCommandHandler createAboutCommandHandler, GetAboutByIdQueryHandler getAboutByIdQueryHandler, GetAboutQueryHandler getAboutQueryHandler, UpdateAboutCommandHandler updateAboutCommandHandler, RemoveAboutCommandHandler removeAboutCommandHandler)
         {
             _createAboutCommandHandler = createAboutCommandHandler;
             _getAboutByIdQueryHandler = getAboutByIdQueryHandler;
@@ -39,7 +39,7 @@ namespace BookCar.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAbout(CreateBannerCommand command)
+        public async Task<IActionResult> CreateAbout(CreateAboutCommand command)
         {
             await _createAboutCommandHandler.Handle(command);
             return Ok("Hakkında Bilgisi Eklendi");
@@ -53,7 +53,7 @@ namespace BookCar.WebApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAbout(UpdateBannerCommand command)
+        public async Task<IActionResult> UpdateAbout(UpdateAboutCommand command)
         {
             await _updateAboutCommandHandler.Handle(command);
             return Ok("Hakkında Bilgisi Gğncellendi");

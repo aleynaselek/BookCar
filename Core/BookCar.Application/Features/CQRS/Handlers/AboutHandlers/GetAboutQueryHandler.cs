@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
 {
-    public class GetBannerQueryHandler
+    public class GetAboutQueryHandler
     {
         private readonly IRepository<About> _repository;
-        public GetBannerQueryHandler(IRepository<About> repository)
+        public GetAboutQueryHandler(IRepository<About> repository)
         {
             _repository = repository;
         }
-        public async Task<List<GetBannerQueryResult>> Handle()
+        public async Task<List<GetAboutQueryResult>> Handle()
         {
             var values =await _repository.GetAllAsync();
-            return values.Select(x => new GetBannerQueryResult
+            return values.Select(x => new GetAboutQueryResult
             {
                 AboutID = x.AboutID,
                 Description = x.Description,

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Commands.AboutCommands
 {
-    public class RemoveBannerCommand
+    public class RemoveAboutCommand
     {
         public int Id { get; set; } 
-        public RemoveBannerCommand(int id)
+        public RemoveAboutCommand(int id)
         {
             Id = id;
         }
