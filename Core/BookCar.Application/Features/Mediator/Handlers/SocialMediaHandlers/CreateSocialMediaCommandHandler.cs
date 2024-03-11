@@ -25,8 +25,7 @@ namespace BookCar.Application.Features.Mediator.Handlers.SocialMediaHandlers
             {
                 Name = request.Name,
                 Url = request.Url,
-                Icon = request.Icon
-                Icon = request.Icon
+                Icon = request.Icon 
 
             }); 
         }
