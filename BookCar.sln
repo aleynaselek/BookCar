@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCar.Application", "Core
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{7B803C67-AD36-4A62-BA8C-622456844738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCar.WebUI", "Frontends\BookCar.WebUI\BookCar.WebUI.csproj", "{378BBAF3-FC3F-4D47-97F7-22FAA5B1CD0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCar.WebUI", "Frontends\BookCar.WebUI\BookCar.WebUI.csproj", "{378BBAF3-FC3F-4D47-97F7-22FAA5B1CD0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCar.Dto", "Frontends\BookCar.Dto\BookCar.Dto.csproj", "{B0221C02-8C83-43FD-873B-EC21B2D95317}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{378BBAF3-FC3F-4D47-97F7-22FAA5B1CD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{378BBAF3-FC3F-4D47-97F7-22FAA5B1CD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{378BBAF3-FC3F-4D47-97F7-22FAA5B1CD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0221C02-8C83-43FD-873B-EC21B2D95317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0221C02-8C83-43FD-873B-EC21B2D95317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0221C02-8C83-43FD-873B-EC21B2D95317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0221C02-8C83-43FD-873B-EC21B2D95317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{D3B82786-2B8C-4665-92ED-BCD15AE82CF1} = {07B2D2A9-0370-45DB-813B-FAC17D497795}
 		{A47FFACD-0438-4BFE-AE38-C1D950A8545D} = {80937163-2C1E-4967-A102-E60545E91449}
 		{378BBAF3-FC3F-4D47-97F7-22FAA5B1CD0D} = {7B803C67-AD36-4A62-BA8C-622456844738}
+		{B0221C02-8C83-43FD-873B-EC21B2D95317} = {7B803C67-AD36-4A62-BA8C-622456844738}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4463471-D8F1-4C29-AF84-307907C18C84}

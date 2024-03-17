@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using BookCar.Dto.AboutDtos;
 
 namespace BookCar.WebUI.ViewComponents.AboutViewComponents
 {
@@ -13,14 +14,15 @@ namespace BookCar.WebUI.ViewComponents.AboutViewComponents
         }
 
        
-        public async Task<ViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var client =  _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7094/api/Abouts");
             if (responseMessage.IsSuccessStatusCode) 
             { 
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<string, object>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
+                return View(values);
             }
             return View();
         }
