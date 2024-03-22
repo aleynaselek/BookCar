@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using BookCar.Dto.AboutDtos;
+using BookCar.Dto.TestimonialDtos;
 
 namespace BookCar.WebUI.ViewComponents.TestimonialViewComponents
 {
@@ -21,7 +22,7 @@ namespace BookCar.WebUI.ViewComponents.TestimonialViewComponents
             if (responseMessage.IsSuccessStatusCode) 
             { 
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
                 return View(values);
             }
             return View();
