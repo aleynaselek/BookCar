@@ -17,11 +17,13 @@ namespace BookCar.WebApi.Controllers
             private readonly RemoveCarCommandHandler _removeCarCommandHandler;
             private readonly GetCarWithBrandQueryHandler _getCarWithBrandQueryHandler;
             private readonly GetLast5CarWithBrandQueryHandler _getLast5CarWithBrandQueryHandler;
+            private readonly GetCarWithPricingQueryHandler _getCarWithPricingQueryHandler;
 
         public CarsController(CreateCarCommandHandler createCarCommandHandler, 
             GetCarByIdQueryHandler getCarByIdQueryHandler, GetCarQueryHandler getCarQueryHandler, 
             UpdateCarCommandHandler updateCarCommandHandler, RemoveCarCommandHandler removeCarCommandHandler, 
-            GetCarWithBrandQueryHandler getCarWithBrandQueryHandler, GetLast5CarWithBrandQueryHandler getLast5CarWithBrandQueryHandler)
+            GetCarWithBrandQueryHandler getCarWithBrandQueryHandler, GetLast5CarWithBrandQueryHandler getLast5CarWithBrandQueryHandler,
+            GetCarWithPricingQueryHandler getCarWithPricingQueryHandler)
             {
                 _createCarCommandHandler = createCarCommandHandler;
                 _getCarByIdQueryHandler = getCarByIdQueryHandler;
@@ -30,6 +32,7 @@ namespace BookCar.WebApi.Controllers
                 _removeCarCommandHandler = removeCarCommandHandler;
                 _getCarWithBrandQueryHandler = getCarWithBrandQueryHandler;
                 _getLast5CarWithBrandQueryHandler = getLast5CarWithBrandQueryHandler;
+                _getCarWithPricingQueryHandler = getCarWithPricingQueryHandler;
             }
 
             [HttpGet]
@@ -79,6 +82,13 @@ namespace BookCar.WebApi.Controllers
             public  IActionResult GetLast5CarWithBrandQueryHandler()
             {
                 var values = _getLast5CarWithBrandQueryHandler.Handle();
+                return Ok(values);
+            }
+        
+            [HttpGet("GetCarWithPricingList")]
+            public  IActionResult GetCarWithPricingList()
+            {
+                var values = _getCarWithPricingQueryHandler.Handle();
                 return Ok(values);
             }
 

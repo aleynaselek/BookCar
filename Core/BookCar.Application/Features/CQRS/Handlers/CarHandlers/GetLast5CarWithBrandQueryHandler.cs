@@ -21,8 +21,8 @@ namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
 
         public List<GetCarWithBrandQueryResult> Handle()
         {
-            var values =  _repository.GetCarWithPricings();
-            return values.Select(x => new GetCarWithPricingQueryResult
+            var values =  _repository.GetLast5CarsWithBrand();
+            return values.Select(x => new GetCarWithBrandQueryResult
             {
                 CarID = x.CarID,
                 BrandID = x.BrandID,
@@ -35,10 +35,7 @@ namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
                 Luggage = x.Luggage,
                 Fuel = x.Fuel,
                 BigImageUrl = x.BigImageUrl,
-                PricingName = x.CarPricings,
-                PricingAmount = x.PricingAmount
             }).ToList();
         }
     }
 }
- 

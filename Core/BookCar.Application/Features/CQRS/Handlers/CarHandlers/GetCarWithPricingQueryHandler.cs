@@ -21,20 +21,13 @@ namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
 
         public List<GetCarWithPricingQueryResult> Handle()
         {
-            var values =  _repository.GetCarWithPricings();
+            var values =  _repository.GetCarsWithPricings();
             return values.Select(x => new GetCarWithPricingQueryResult
             {
-                CarID = x.CarID,
-                BrandID = x.BrandID,
-                BrandName = x.Brand.Name,
-                Model = x.Model,
-                CoverImageUrl = x.CoverImageUrl,
-                Km = x.Km,
-                Transmission = x.Transmission,
-                Seat = x.Seat,
-                Luggage = x.Luggage,
-                Fuel = x.Fuel,
-                BigImageUrl = x.BigImageUrl,
+                Model = x.Car.Model,
+                CoverImageUrl = x.Car.CoverImageUrl,
+                BrandName = x.Car.Brand.Name,
+                PricingAmount= x.Amount 
             }).ToList();
         }
     }

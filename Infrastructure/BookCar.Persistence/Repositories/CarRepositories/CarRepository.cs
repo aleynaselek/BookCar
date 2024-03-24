@@ -23,13 +23,13 @@ namespace BookCar.Persistence.Repositories.CarRepositories
             return values;
         }
 
-        public List<Car> GetCarsWithPricings()
+        public List<CarPricing> GetCarsWithPricings()
         {
-            var values = _context.Cars.Include(x => x.Brand).Include(y=>y.CarPricings).ToList();
+            var values = _context.CarPricings.Include(x => x.Car).ThenInclude(y=>y.Brand).Include(z=>z.Pricing).ToList();
             return values;
         }
 
-        public List<Car> GetLast5CarsWithBrands()
+        public List<Car> GetLast5CarsWithBrand()
         {
             var values = _context.Cars.Include(x=>x.Brand).OrderByDescending(x=>x.CarID).Take(5).ToList();
             return values;
