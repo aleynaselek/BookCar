@@ -2,7 +2,7 @@
 
 namespace BookCar.WebUI.ViewComponents.BlogViewComponents
 {
-    public class _BlogDetailsRecentBlogsComponentPartial : ViewComponent
+    public class _BlogDetailsTagCloudComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
