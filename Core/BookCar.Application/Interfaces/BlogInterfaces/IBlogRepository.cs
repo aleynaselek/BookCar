@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace BookCar.Application.Interfaces.BlogInterfaces
 {
     public interface IBlogRepository
-    { 
-        List<Blog> GetLast3BlogsWithAuthors();
+    {
+        public List<Blog> GetLast3BlogsWithAuthors();
+        public List<Blog> GeAllBlogsWithAuthors();
     }
 }
