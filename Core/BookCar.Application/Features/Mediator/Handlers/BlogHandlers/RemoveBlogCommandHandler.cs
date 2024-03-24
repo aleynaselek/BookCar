@@ -1,4 +1,4 @@
-﻿using BookCar.Application.Features.Mediator.Commands.AuthorCommands;
+﻿using BookCar.Application.Features.Mediator.Commands.BlogCommands;
 using BookCar.Application.Interfaces;
 using BookCar.Domain.Entities;
 using MediatR;
@@ -8,18 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Application.Features.Mediator.Handlers.AuthorHandlers
+namespace BookCar.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class RemoveAuthorCommandHandler : IRequestHandler<RemoveAuthorCommand>
+    public class RemoveBlogCommandHandler : IRequestHandler<RemoveBlogCommand>
     {
-        private readonly IRepository<Author> _repository;
+        private readonly IRepository<Blog> _repository;
 
-        public RemoveAuthorCommandHandler(IRepository<Author> repository)
+        public RemoveBlogCommandHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }
 
-        public async Task Handle(RemoveAuthorCommand request, CancellationToken cancellationToken)
+        public async Task Handle(RemoveBlogCommand request, CancellationToken cancellationToken)
         {
             var value = await _repository.GetByIdAsync(request.Id);
             await _repository.RemoveAsync(value);

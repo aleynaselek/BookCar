@@ -23,9 +23,11 @@ namespace BookCar.Application.Features.Mediator.Handlers.BlogHandlers
         {
             await _repository.CreateAsync(new Blog
             {
-                Name = request.Name,
-                ImageUrl = request.ImageUrl,
-                Description = request.Description
+                Title = request.Title,
+                AuthorID = request.AuthorID,
+                CoverImageUrl = request.CoverImageUrl,
+                CreatedDate = request.CreatedDate,
+                CategoryID = request.CategoryID
             }); 
         }
     }

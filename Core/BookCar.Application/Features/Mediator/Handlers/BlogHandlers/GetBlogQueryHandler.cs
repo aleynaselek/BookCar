@@ -4,31 +4,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BookCar.Application.Features.Mediator.Results.AuthorResults;
-using BookCar.Application.Features.Mediator.Queries.AuthorQueries;
+using BookCar.Application.Features.Mediator.Results.BlogResults;
+using BookCar.Application.Features.Mediator.Queries.BlogQueries;
 using BookCar.Application.Interfaces;
 using BookCar.Domain.Entities;
 
-namespace BookCar.Application.Features.Mediator.Handlers.AuthorHandlers
+namespace BookCar.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class GetAuthorQueryHandler : IRequestHandler<GetAuthorQuery, List<GetAuthorQueryResult>>
+    public class GetBlogQueryHandler : IRequestHandler<GetBlogQuery, List<GetBlogQueryResult>>
     {
-        private readonly IRepository<Author> _repository;
+        private readonly IRepository<Blog> _repository;
 
-        public GetAuthorQueryHandler(IRepository<Author> repository)
+        public GetBlogQueryHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }
 
-        public async Task<List<GetAuthorQueryResult>> Handle(GetAuthorQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetBlogQueryResult>> Handle(GetBlogQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetAllAsync();
-            return values.Select(x => new GetAuthorQueryResult
+            return values.Select(x => new GetBlogQueryResult
             {
+                BlogID = x.BlogID,
+                Title = x.Title,
                 AuthorID = x.AuthorID,
-                Name = x.Name,
-                ImageUrl = x.ImageUrl,
-                Description = x.Description
+                CoverImageUrl = x.CoverImageUrl,
+                CreatedDate = x.CreatedDate,
+                CategoryID = x.CategoryID
             }).ToList();
         }
     }

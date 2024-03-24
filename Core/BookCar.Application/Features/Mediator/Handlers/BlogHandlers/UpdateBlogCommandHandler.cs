@@ -1,4 +1,4 @@
-﻿using BookCar.Application.Features.Mediator.Commands.AuthorCommands;
+﻿using BookCar.Application.Features.Mediator.Commands.BlogCommands;
 using BookCar.Application.Interfaces;
 using BookCar.Domain.Entities;
 using MediatR;
@@ -8,23 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Application.Features.Mediator.Handlers.AuthorHandlers
+namespace BookCar.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class UpdateAuthorCommandHandler : IRequestHandler<UpdateAuthorCommand>
+    public class UpdateBlogCommandHandler : IRequestHandler<UpdateBlogCommand>
     {
-        private readonly IRepository<Author> _repository;
+        private readonly IRepository<Blog> _repository;
 
-        public UpdateAuthorCommandHandler(IRepository<Author> repository)
+        public UpdateBlogCommandHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }
 
-        public async Task Handle(UpdateAuthorCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateBlogCommand request, CancellationToken cancellationToken)
         {
-            var values = await _repository.GetByIdAsync(request.AuthorID);
-            values.Name = request.Name;
-            values.ImageUrl = request.ImageUrl;
-            values.Description = request.Description;
+            var values = await _repository.GetByIdAsync(request.BlogID);
+            values.Title = request.Title;
+            values.AuthorID = request.AuthorID;
+            values.CoverImageUrl = request.CoverImageUrl;
+            values.CreatedDate = request.CreatedDate;
+            values.CategoryID = request.CategoryID;
             await _repository.UpdateAsync(values);
         }
     }
