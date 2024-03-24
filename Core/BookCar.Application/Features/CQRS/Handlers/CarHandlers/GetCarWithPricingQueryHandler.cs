@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
 {
-    public class GetLast5CarWithBrandQueryHandler
+    public class GetCarWithPricingQueryHandler
     {
         private readonly ICarRepository _repository;
 
-        public GetLast5CarWithBrandQueryHandler(ICarRepository repository)
+        public GetCarWithPricingQueryHandler(ICarRepository repository)
         {
             _repository = repository;
         }
 
-        public List<GetCarWithBrandQueryResult> Handle()
+        public List<GetCarWithPricingQueryResult> Handle()
         {
             var values =  _repository.GetCarWithPricings();
             return values.Select(x => new GetCarWithPricingQueryResult
@@ -35,10 +35,7 @@ namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
                 Luggage = x.Luggage,
                 Fuel = x.Fuel,
                 BigImageUrl = x.BigImageUrl,
-                PricingName = x.CarPricings,
-                PricingAmount = x.PricingAmount
             }).ToList();
         }
     }
 }
- 
