@@ -83,12 +83,7 @@ namespace BookCar.WebApi.Controllers
                 return Ok(values);
             }
         
-            [HttpGet("GetCarWithPricingList")]
-            public  IActionResult GetCarWithPricingList()
-            {
-                var values = _getCarWithPricingQueryHandler.Handle();
-                return Ok(values);
-            }
+           
 
         }
     }
