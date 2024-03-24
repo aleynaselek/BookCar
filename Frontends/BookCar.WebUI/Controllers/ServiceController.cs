@@ -20,6 +20,9 @@ namespace BookCar.WebUI.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultServiceDto>>(jsonData);
+
+                ViewBag.v1 = "Hizmetler";
+                ViewBag.v2 = "Hizmetlerimiz";
                 return View(values);
             } 
 
