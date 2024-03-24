@@ -27,5 +27,13 @@ namespace BookCar.WebUI.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> BlogDetail()
+        {
+            ViewBag.v1 = "Bloglar";
+            ViewBag.v2 = "Blog Detayı ve Yorumlar";
+            return View();
+
+        }
     }
 }
