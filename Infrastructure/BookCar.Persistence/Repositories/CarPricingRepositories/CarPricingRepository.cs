@@ -10,26 +10,22 @@ using System.Threading.Tasks;
 
 namespace BookCar.Persistence.Repositories.CarRepositories
 {
-    public class CarRepository : ICarRepository
+    public class CarPricingRepository : ICarPricingRepository
     {
         private readonly CarBookContext _context;
-        public CarRepository(CarBookContext context)
+        public CarPricingRepository(CarBookContext context)
         {
             _context = context;
         }
-        public List<Car> GetCarsWithBrand()
+      
+
+        public List<CarPricing> GetCarPricingWithCars()
         {
-            var values = _context.Cars.Include(x=>x.Brand).ToList();
+            var values = _context.CarPricings.Include(x => x.Car).ThenInclude(y=>y.Brand).Include(z=>z.Pricing).ToList();
             return values;
         }
-
          
-        public List<Car> GetLast5CarsWithBrand()
-        {
-            var values = _context.Cars.Include(x=>x.Brand).OrderByDescending(x=>x.CarID).Take(5).ToList();
-            return values;
-        }
-
 
     }
 }
+ 
