@@ -10,6 +10,6 @@ namespace BookCar.Application.Interfaces.BlogInterfaces
     public interface IBlogRepository
     {
         public List<Blog> GetLast3BlogsWithAuthors();
-        public List<Blog> GeAllBlogsWithAuthors();
+        public List<Blog> GetAllBlogsWithAuthors();
     }
 }

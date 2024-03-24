@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.Mediator.Queries.BlogQueries
 {
-    public class GetAllBlogsWithAuthorQuery:IRequest<List<GetAllBlogsWithAuthorQueryResult>>
+    public class GetAllBlogsWithAuthorQuery : IRequest<List<GetAllBlogsWithAuthorQueryResult>>
     {
     }
 }
