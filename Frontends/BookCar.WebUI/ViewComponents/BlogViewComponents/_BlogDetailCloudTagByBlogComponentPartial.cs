@@ -1,4 +1,5 @@
 ﻿using BookCar.Dto.BlogDtos;
+using BookCar.Dto.TagCloudDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -22,7 +23,7 @@ namespace BookCar.WebUI.ViewComponents.BlogViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<GetBlogById>(jsonData);
+                var values = JsonConvert.DeserializeObject<GetByBlogIdTagCloudDto>(jsonData);
                 return View(values);
             }
             return View();
