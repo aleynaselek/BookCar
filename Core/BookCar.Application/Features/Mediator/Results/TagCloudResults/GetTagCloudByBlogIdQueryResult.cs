@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookCar.Dto.TagCloudDtos
+namespace BookCar.Application.Features.Mediator.Results.TagCloudResults
 {
-    public class GetByBlogIdTagCloudDto
+    public class GetTagCloudByBlogIdQueryResult
     {
         public int TagCloudID { get; set; }
         public string Title { get; set; }
-        public int BlogID { get; set; } 
+        public int BlogID { get; set; }
 
     }
 }
