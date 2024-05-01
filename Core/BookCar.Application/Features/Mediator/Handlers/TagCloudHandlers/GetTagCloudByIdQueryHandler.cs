@@ -23,12 +23,16 @@ namespace BookCar.Application.Features.Mediator.Handlers.TagCloudHandlers
         public async Task<GetTagCloudByIdQueryResult> Handle(GetTagCloudByIdQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetByIdAsync(request.Id);
+            if(values != null)
+            { 
             return new GetTagCloudByIdQueryResult
             {
                 BlogID = values.BlogID,
                 Title = values.Title,
                 TagCloudID = values.TagCloudID
             };
+            }
+            return null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace BookCar.WebUI.ViewComponents.BlogViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<GetByBlogIdTagCloudDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<GetByBlogIdTagCloudDto>>(jsonData);
                 return View(values);
             }
             return View();
