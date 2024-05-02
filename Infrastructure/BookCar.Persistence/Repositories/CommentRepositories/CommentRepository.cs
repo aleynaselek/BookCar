@@ -25,7 +25,14 @@ namespace BookCar.Persistence.Repositories.CommentRepositories
 
         public List<Comment> GetAll()
         {
-           return _context.Comments.ToList();
+           return _context.Comments.Select(x=> new Comment
+           {
+               CommentID = x.CommentID,
+               Name = x.Name,
+               CreatedDate = x.CreatedDate,
+               Description = x.Description,
+               BlogId = x.BlogId   
+           }).ToList();
         }
 
         public Comment GetById(int id)
