@@ -32,10 +32,10 @@ namespace BookCar.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateComment(Comment command)
+        public IActionResult CreateComment(Comment comment)
         {
-             _commentsRepository.Create(command);
-            return Ok("Hakkında Bilgisi Eklendi");
+             _commentsRepository.Create(comment);
+            return Ok("Yorum Başarıyla Eklendi");
         }
 
         [HttpDelete]
@@ -43,14 +43,14 @@ namespace BookCar.WebApi.Controllers
         {
             var value = _commentsRepository.GetById(id);
             _commentsRepository.Remove(value);
-            return Ok("Hakkında Bilgisi Silindi");
+            return Ok("Yorum Başarıyla Silindi");
         }
 
         [HttpPut]
-        public IActionResult UpdateComment(Comment command)
+        public IActionResult UpdateComment(Comment comment)
         {
-            _commentsRepository.Update(command);
-            return Ok("Hakkında Bilgisi Güncellendi");
+            _commentsRepository.Update(comment);
+            return Ok("Yorum Başarıyla Güncellendi");
         }
 
     }
