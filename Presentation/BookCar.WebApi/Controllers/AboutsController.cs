@@ -56,7 +56,7 @@ namespace BookCar.WebApi.Controllers
         public async Task<IActionResult> UpdateAbout(UpdateAboutCommand command)
         {
             await _updateAboutCommandHandler.Handle(command);
-            return Ok("Hakkında Bilgisi Gğncellendi");
+            return Ok("Hakkında Bilgisi Güncellendi");
         }
 
     }
