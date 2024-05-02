@@ -10,7 +10,7 @@
 
             <div class="col-md-4 sidebar ftco-animate">
                 
-                @await Component.InvokeAsync("_BlogDetailSideBarSearchBoxComponentPartial")
+                @await Component.InvokeAsync("_BlogDetailSideBarSearchBoxComponentPartial", new { id = ViewBag.blogid })
 
                 @await Component.InvokeAsync("_BlogDetailsCategoryViewComponentPartial")
 
