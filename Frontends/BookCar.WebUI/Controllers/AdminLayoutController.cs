@@ -12,6 +12,10 @@ namespace BookCar.WebUI.Controllers
         public PartialViewResult AdminHeaderPartial()
         {
             return PartialView();
+        } 
+        public PartialViewResult AdminNavbarPartial()
+        {
+            return PartialView();
         }
     }
 }
