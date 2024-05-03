@@ -23,5 +23,13 @@ namespace BookCar.WebUI.Controllers
             }
             return View();
         }
+    
+
+        [HttpGet]
+        public IActionResult CreateCar()
+        {
+            return View();
+        }
+
     }
 }
