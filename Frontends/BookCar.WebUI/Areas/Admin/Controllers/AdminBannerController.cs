@@ -6,6 +6,7 @@ using System.Text;
 namespace BookCar.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/AdminBanner")]
     public class AdminBannerController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -13,6 +14,10 @@ namespace BookCar.WebUI.Areas.Admin.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
+
+     
+        
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -26,12 +31,14 @@ namespace BookCar.WebUI.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
+        [Route("CreateBanner")]
         public async Task<IActionResult> CreateBanner()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("CreateBanner")]
         public async Task<IActionResult> CreateBanner(CreateBannerDto createBannerDto)
         {
             var client = _httpClientFactory.CreateClient();
@@ -40,13 +47,14 @@ namespace BookCar.WebUI.Areas.Admin.Controllers
             var responseMessage = await client.PostAsync("https://localhost:7094/api/Banners", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "AdminBanner", new {area="Admin"});
             }
             return View();
         }
 
 
         [HttpGet]
+        [Route("UpdateBanner/{id}")]
         public async Task<IActionResult> UpdateBanner(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -62,6 +70,7 @@ namespace BookCar.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Route("UpdateBanner/{id}")]
         public async Task<IActionResult> UpdateBanner(UpdateBannerDto updateBannerDto)
         {
             var client = _httpClientFactory.CreateClient();
@@ -70,19 +79,19 @@ namespace BookCar.WebUI.Areas.Admin.Controllers
             var responseMessage = await client.PutAsync("https://localhost:7094/api/Banners", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "AdminBanner", new { area = "Admin" });
             }
             return View();
         }
 
-
+        [Route("RemoveBanner/{id}")]
         public async Task<IActionResult> RemoveBanner(int id)
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.DeleteAsync("https://localhost:7094/api/Banners?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "AdminBanner", new { area = "Admin" });
             }
             return View();
         }
