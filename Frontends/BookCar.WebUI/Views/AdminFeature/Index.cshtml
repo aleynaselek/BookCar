@@ -32,15 +32,15 @@
                                         count++;
                                     <tr>
                                         <th scope="row">@count</th>
-                                        <td>@item.Name</td> 
-                                            <td><a href="/AdminCar/FeatureCar/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
-                                            <td><a href="/AdminCar/FeatureCar/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td>@item.Name</td>
+                                            <td><a href="/AdminFeature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
+                                            <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
 
                                     </tr>
                                     } 
                                 </tbody>
                             </table>
-                            <a href="/AdminCar/FeatureCar" class="btn btn-outline-primary">Yeni Özellik Girişi</a>
+                            <a href="/AdminFeature/CreateFeature" class="btn btn-outline-primary">Yeni Özellik Girişi</a>
                         </div>
 
                     </div>
