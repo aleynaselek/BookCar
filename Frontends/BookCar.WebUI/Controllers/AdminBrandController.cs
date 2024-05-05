@@ -1,10 +1,6 @@
-﻿using BookCar.Dto.BrandDtos;
-using BookCar.Dto.CarDtos;
-using BookCar.Dto.BrandDtos;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using BookCar.Dto.BrandDtos; 
+using Microsoft.AspNetCore.Mvc; 
+using Newtonsoft.Json; 
 using System.Text;
 
 namespace BookCar.WebUI.Controllers
