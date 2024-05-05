@@ -78,12 +78,24 @@ namespace BookCar.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCar(CreateCarDto createCarDto)
+        public async Task<IActionResult> UpdateCar(CreateCarDto createCarDto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createCarDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7094/api/Cars", stringContent);
+            var responseMessage = await client.PutAsync("https://localhost:7094/api/Cars", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+       
+        public async Task<IActionResult> RemoveCar(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync("https://localhost:7094/api/Cars?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
