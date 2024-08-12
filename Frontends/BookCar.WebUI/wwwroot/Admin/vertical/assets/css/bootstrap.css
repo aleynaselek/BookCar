@@ -10502,9 +10502,6 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-/* =============
-   General
-============= */
 html {
   position: relative;
   min-height: 100%;
@@ -10726,4 +10723,3 @@ button, a {
 .page-link {
   border-radius: 50% !important;
 }
-/*# sourceMappingURL=bootstrap.css.map */
