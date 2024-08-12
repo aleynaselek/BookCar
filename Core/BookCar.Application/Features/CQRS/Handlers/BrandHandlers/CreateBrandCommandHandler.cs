@@ -17,12 +17,12 @@ namespace BookCar.Application.Features.CQRS.Handlers.BrandHandlers
         {
             _repository = repository;
         }
-        public async Task Handle(CreateBrandCommand command)
-        {
-            await _repository.CreateAsync(new Brand
-            {
-                Name = command.Name
-            });
-        }
+        //public async Task Handle(CreateBrandCommand command)
+        //{
+        //    await _repository.CreateAsync(new Brand
+        //    {
+        //        Name = command.Name
+        //    });
+        //}
     }
 }

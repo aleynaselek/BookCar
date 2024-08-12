@@ -38,12 +38,12 @@ namespace BookCar.WebApi.Controllers
             return Ok(value);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateBrand(CreateBrandCommand command)
-        {
-            await _createBrandCommandHandler.Handle(command);
-            return Ok("Hakkında Bilgisi Eklendi");
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> CreateBrand(CreateBrandCommand command)
+        //{
+        //    await _createBrandCommandHandler.Handle(command);
+        //    return Ok("Hakkında Bilgisi Eklendi");
+        //}
 
         [HttpDelete]
         public async Task<IActionResult> RemoveBrand(int id)
@@ -56,7 +56,7 @@ namespace BookCar.WebApi.Controllers
         public async Task<IActionResult> UpdateAbout(UpdateBrandCommand command)
         {
             await _updateBrandCommandHandler.Handle(command);
-            return Ok("Hakkında Bilgisi Gğncellendi");
+            return Ok("Hakkında Bilgisi Güncellendi");
         }
 
     }
