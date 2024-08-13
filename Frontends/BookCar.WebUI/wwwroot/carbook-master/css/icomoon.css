@@ -8,7 +8,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 [class^="icon-"], [class*=" icon-"] { 
   font-family: 'icomoon' !important;
   speak: none;
@@ -16,12 +15,10 @@
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
-   
+  line-height: 1;   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-asterisk:before {
   content: "\f069";
 }
